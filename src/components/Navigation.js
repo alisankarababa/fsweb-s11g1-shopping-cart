@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { ScNav } from "./scParts";
-import { ProductContext } from "../contexts/ProductContext";
-
-
+import { CartContext } from "../contexts/CartContext";
 
 const Navigation = () => {
 
-    const { cart } = useContext(ProductContext);
+    const { cart } = useContext(CartContext);
 
   return (
     <ScNav>

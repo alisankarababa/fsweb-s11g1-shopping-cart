@@ -44,7 +44,11 @@ function App() {
     <div className="App">
 
         <ProductContext.Provider value={ { products, cart, addItem, removeItem } }>
-            <Navigation />
+            
+            <CartContext.Provider value={ { cart } }>
+                <Navigation />
+            </CartContext.Provider>
+            
 
             {/* Routelar */}
             <main className="content">
