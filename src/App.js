@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import Products from "./components/Products";
 import ShoppingCart from "./components/ShoppingCart";
 import { ProductContext } from "./contexts/ProductContext";
+import { CartContext } from "./contexts/CartContext";
 
 function App() {
   const [products, setProducts] = useState(data);
@@ -50,9 +51,10 @@ function App() {
               <Route exact path="/">
                 <Products />
               </Route>
-
               <Route path="/cart">
-                <ShoppingCart />
+                <CartContext.Provider value={ { cart, removeItem } }>
+                    <ShoppingCart />
+                </CartContext.Provider>
               </Route>
             </main>
         </ProductContext.Provider>
