@@ -17,7 +17,9 @@ function App() {
     if ( cart.find( cartItem => cartItem.id === item.id ) )
         return;
     
-    setCart( [ ...cart, item ] );
+    const newCart = [ ...cart, item ];
+    setCart( newCart );
+    localStorage.setItem( "cart", JSON.stringify( newCart ) );
   };
 
   const removeItem = (id) => {
