@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { ScCartItem, ScCartItemDetails } from "./scParts";
-import { ProductContext } from "../contexts/ProductContext";
+import { CartContext } from "../contexts/CartContext";
 
 const Item = (props) => {
 
-    const { removeItem } = useContext(ProductContext);
+    const { removeItem } = useContext(CartContext);
 
   return (
     <ScCartItem>
