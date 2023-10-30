@@ -20,6 +20,12 @@ function App() {
     setCart( [ ...cart, item ] );
   };
 
+  const removeItem = (id) => {
+    
+    setCart( cart.filter( cartItem  => cartItem.id !== id) );
+    
+  };
+
   return (
     <div className="App">
 
