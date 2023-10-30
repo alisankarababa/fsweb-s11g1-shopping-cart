@@ -28,6 +28,9 @@ function App() {
                 <Products />
               </Route>
 
+              <Route path="/cart">
+                <ShoppingCart />
+              </Route>
             </main>
         </ProductContext.Provider>
     </div>
