@@ -13,7 +13,11 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addItem = (item) => {
-    // verilen itemi sepete ekleyin
+    
+    if ( cart.find( cartItem => cartItem.id === item.id ) )
+        return;
+    
+    setCart( [ ...cart, item ] );
   };
 
   return (
