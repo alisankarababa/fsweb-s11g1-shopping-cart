@@ -42,26 +42,22 @@ function App() {
 
   return (
     <div className="App">
-
-        <ProductContext.Provider value={ { products, cart, addItem, removeItem } }>
-            
-            <CartContext.Provider value={ { cart } }>
-                <Navigation />
-            </CartContext.Provider>
-            
-
-            {/* Routelar */}
-            <main className="content">
-              <Route exact path="/">
+        <CartContext.Provider value={ { cart } }>
+            <Navigation />
+        </CartContext.Provider>
+        {/* Routelar */}
+        <main className="content">
+          <Route exact path="/">
+            <ProductContext.Provider value={ { products, addItem } }>
                 <Products />
-              </Route>
-              <Route path="/cart">
-                <CartContext.Provider value={ { cart, removeItem } }>
-                    <ShoppingCart />
-                </CartContext.Provider>
-              </Route>
-            </main>
-        </ProductContext.Provider>
+            </ProductContext.Provider>
+          </Route>
+          <Route path="/cart">
+            <CartContext.Provider value={ { cart, removeItem } }>
+                <ShoppingCart />
+            </CartContext.Provider>
+          </Route>
+        </main>
     </div>
   );
 }
