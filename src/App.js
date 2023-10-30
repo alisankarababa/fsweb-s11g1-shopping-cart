@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
 
-        <ProductContext.Provider value={ { products, cart, addItem } }>
+        <ProductContext.Provider value={ { products, cart, addItem, removeItem } }>
             <Navigation />
 
             {/* Routelar */}
